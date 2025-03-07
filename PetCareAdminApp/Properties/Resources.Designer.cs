@@ -103,6 +103,16 @@ namespace PetCareAdminApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dashboard {
+            get {
+                object obj = ResourceManager.GetObject("dashboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dog {
             get {
                 object obj = ResourceManager.GetObject("dog", resourceCulture);
