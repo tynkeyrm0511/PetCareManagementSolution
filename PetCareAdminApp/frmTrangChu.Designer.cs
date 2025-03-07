@@ -87,7 +87,7 @@
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(177, 92);
             this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Khách hàng";
+            this.guna2Button1.Text = "Khách hàngg";
             // 
             // guna2Button2
             // 
