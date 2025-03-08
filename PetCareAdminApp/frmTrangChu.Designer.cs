@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelMain = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnMoFormChat = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnMoFormLichHen = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -35,16 +36,18 @@
             this.btnMoFormThuCung = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnMoFormKhachHang = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.timerThoiGian = new System.Windows.Forms.Timer(this.components);
+            this.lblThoiGian = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
-            this.panelMain.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(169)))));
             this.panelMain.BorderRadius = 5;
             this.panelMain.BorderThickness = 3;
-            this.panelMain.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(169)))));
+            this.panelMain.Controls.Add(this.lblThoiGian);
             this.panelMain.CustomBorderThickness = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.panelMain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.panelMain.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -161,6 +164,22 @@
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // timerThoiGian
+            // 
+            this.timerThoiGian.Interval = 1000;
+            this.timerThoiGian.Tick += new System.EventHandler(this.timerThoiGian_Tick);
+            // 
+            // lblThoiGian
+            // 
+            this.lblThoiGian.BackColor = System.Drawing.Color.Transparent;
+            this.lblThoiGian.Font = new System.Drawing.Font("Playpen Sans", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThoiGian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.lblThoiGian.Location = new System.Drawing.Point(42, 223);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(3, 2);
+            this.lblThoiGian.TabIndex = 0;
+            this.lblThoiGian.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -181,6 +200,8 @@
             this.Text = "frmTrangChu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTrangChu_FormClosing);
             this.Load += new System.EventHandler(this.frmTrangChu_Load);
+            this.panelMain.ResumeLayout(false);
+            this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -194,5 +215,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnMoFormDichVu;
         private Guna.UI2.WinForms.Guna2GradientButton btnMoFormLichHen;
         private Guna.UI2.WinForms.Guna2GradientButton btnMoFormChat;
+        private System.Windows.Forms.Timer timerThoiGian;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblThoiGian;
     }
 }

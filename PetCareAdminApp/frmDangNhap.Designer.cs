@@ -59,10 +59,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(119, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(89, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(445, 91);
+            this.label1.Size = new System.Drawing.Size(360, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "PET CARE";
             // 
@@ -72,10 +71,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(169)))));
-            this.label2.Location = new System.Drawing.Point(30, 150);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(19, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(622, 91);
+            this.label2.Size = new System.Drawing.Size(501, 73);
             this.label2.TabIndex = 1;
             this.label2.Text = "MANAGEMENT";
             // 
@@ -90,11 +88,10 @@
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(698, 123);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(526, 122);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(552, 298);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(414, 242);
             this.guna2GroupBox1.TabIndex = 2;
             // 
             // btnDangNhap
@@ -107,11 +104,10 @@
             this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
             this.btnDangNhap.HoverState.Parent = this.btnDangNhap;
-            this.btnDangNhap.Location = new System.Drawing.Point(25, 190);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangNhap.Location = new System.Drawing.Point(19, 154);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.ShadowDecoration.Parent = this.btnDangNhap;
-            this.btnDangNhap.Size = new System.Drawing.Size(500, 82);
+            this.btnDangNhap.Size = new System.Drawing.Size(375, 67);
             this.btnDangNhap.TabIndex = 2;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
@@ -132,14 +128,14 @@
             this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatKhau.HoverState.Parent = this.txtMatKhau;
-            this.txtMatKhau.Location = new System.Drawing.Point(25, 111);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(7, 4, 7, 4);
+            this.txtMatKhau.Location = new System.Drawing.Point(19, 90);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '\0';
             this.txtMatKhau.PlaceholderText = "Nhập mật khẩu...";
             this.txtMatKhau.SelectedText = "";
             this.txtMatKhau.ShadowDecoration.Parent = this.txtMatKhau;
-            this.txtMatKhau.Size = new System.Drawing.Size(500, 71);
+            this.txtMatKhau.Size = new System.Drawing.Size(375, 58);
             this.txtMatKhau.TabIndex = 1;
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
@@ -159,14 +155,14 @@
             this.txtTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.txtTaiKhoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaiKhoan.HoverState.Parent = this.txtTaiKhoan;
-            this.txtTaiKhoan.Location = new System.Drawing.Point(25, 27);
-            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(19, 22);
+            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.PasswordChar = '\0';
             this.txtTaiKhoan.PlaceholderText = "Nhập tài khoản...";
             this.txtTaiKhoan.SelectedText = "";
             this.txtTaiKhoan.ShadowDecoration.Parent = this.txtTaiKhoan;
-            this.txtTaiKhoan.Size = new System.Drawing.Size(500, 71);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(375, 58);
             this.txtTaiKhoan.TabIndex = 0;
             // 
             // guna2GradientPanel1
@@ -185,19 +181,19 @@
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1288, 608);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(966, 494);
             this.guna2GradientPanel1.TabIndex = 3;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::PetCareAdminApp.Properties.Resources.cat;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(191, 244);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(144, 197);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(300, 300);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(250, 250);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 10;
             this.guna2PictureBox1.TabStop = false;
@@ -205,10 +201,11 @@
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = global::PetCareAdminApp.Properties.Resources.bark;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(1056, -18);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(792, -15);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(252, 200);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(189, 162);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 4;
             this.guna2PictureBox2.TabStop = false;
@@ -216,10 +213,11 @@
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.Image = global::PetCareAdminApp.Properties.Resources.dog;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(1033, 428);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(775, 348);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
-            this.guna2PictureBox3.Size = new System.Drawing.Size(275, 192);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(206, 156);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 5;
             this.guna2PictureBox3.TabStop = false;
@@ -227,10 +225,11 @@
             // guna2PictureBox4
             // 
             this.guna2PictureBox4.Image = global::PetCareAdminApp.Properties.Resources.dogs;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(521, 213);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(391, 173);
+            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
             this.guna2PictureBox4.ShadowDecoration.Parent = this.guna2PictureBox4;
-            this.guna2PictureBox4.Size = new System.Drawing.Size(424, 340);
+            this.guna2PictureBox4.Size = new System.Drawing.Size(318, 276);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox4.TabIndex = 6;
             this.guna2PictureBox4.TabStop = false;
@@ -238,10 +237,11 @@
             // guna2PictureBox5
             // 
             this.guna2PictureBox5.Image = global::PetCareAdminApp.Properties.Resources.purr;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(-113, 415);
+            this.guna2PictureBox5.Location = new System.Drawing.Point(-107, 327);
+            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
             this.guna2PictureBox5.ShadowDecoration.Parent = this.guna2PictureBox5;
-            this.guna2PictureBox5.Size = new System.Drawing.Size(277, 205);
+            this.guna2PictureBox5.Size = new System.Drawing.Size(208, 167);
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox5.TabIndex = 7;
             this.guna2PictureBox5.TabStop = false;
@@ -249,10 +249,11 @@
             // guna2PictureBox6
             // 
             this.guna2PictureBox6.Image = global::PetCareAdminApp.Properties.Resources.purr;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(571, -42);
+            this.guna2PictureBox6.Location = new System.Drawing.Point(428, -34);
+            this.guna2PictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox6.Name = "guna2PictureBox6";
             this.guna2PictureBox6.ShadowDecoration.Parent = this.guna2PictureBox6;
-            this.guna2PictureBox6.Size = new System.Drawing.Size(252, 200);
+            this.guna2PictureBox6.Size = new System.Drawing.Size(189, 162);
             this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox6.TabIndex = 8;
             this.guna2PictureBox6.TabStop = false;
@@ -260,25 +261,27 @@
             // guna2PictureBox7
             // 
             this.guna2PictureBox7.Image = global::PetCareAdminApp.Properties.Resources.dog;
-            this.guna2PictureBox7.Location = new System.Drawing.Point(-151, -63);
+            this.guna2PictureBox7.Location = new System.Drawing.Point(-113, -51);
+            this.guna2PictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox7.Name = "guna2PictureBox7";
             this.guna2PictureBox7.ShadowDecoration.Parent = this.guna2PictureBox7;
-            this.guna2PictureBox7.Size = new System.Drawing.Size(275, 192);
+            this.guna2PictureBox7.Size = new System.Drawing.Size(206, 156);
             this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox7.TabIndex = 9;
             this.guna2PictureBox7.TabStop = false;
             // 
             // frmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(244)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(1288, 608);
+            this.ClientSize = new System.Drawing.Size(966, 494);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG NHẬP";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();

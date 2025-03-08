@@ -12,9 +12,12 @@ namespace PetCareAdminApp
 {
     public partial class frmTrangChu: Form
     {
+        private bool isClosing = false;
+
         public frmTrangChu()
         {
             InitializeComponent();
+            timerThoiGian.Start();
         }
 
         private void OpenChildForm(Form childForm)
@@ -41,7 +44,24 @@ namespace PetCareAdminApp
 
         private void frmTrangChu_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (!isClosing)
+            {
+                DialogResult ketQua = MessageBox.Show("Bạn có chắc chắn muốn thoát không?",
+                    "Xác nhận thoát",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
+                if (ketQua == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    // Đặt biến cờ là true để ngăn việc hiển thị hộp thoại xác nhận thêm lần nữa
+                    isClosing = true;
+                    Application.Exit();
+                }
+            }
         }
         private void btnMoFormKhachHang_Click(object sender, EventArgs e)
         {
@@ -66,6 +86,11 @@ namespace PetCareAdminApp
         private void btnMoFormChat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timerThoiGian_Tick(object sender, EventArgs e)
+        {
+            lblThoiGian.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

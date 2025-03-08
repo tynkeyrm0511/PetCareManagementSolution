@@ -43,6 +43,7 @@ namespace PetCareAdminApp
                 throw new Exception("Lỗi khi kiểm tra thông tin đăng nhập: " + ex.Message);
             }
         }
+        
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             string tenDangNhap = txtTaiKhoan.Text;
@@ -70,6 +71,16 @@ namespace PetCareAdminApp
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
