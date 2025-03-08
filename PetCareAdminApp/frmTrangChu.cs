@@ -50,7 +50,7 @@ namespace PetCareAdminApp
 
         private void btnMoFormThuCung_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frmThuCung());
         }
 
         private void btnMoFormDichVu_Click(object sender, EventArgs e)
