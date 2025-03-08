@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMain = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblThoiGian = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnMoFormChat = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnMoFormLichHen = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnMoFormDichVu = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -37,7 +38,6 @@
             this.btnMoFormKhachHang = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.timerThoiGian = new System.Windows.Forms.Timer(this.components);
-            this.lblThoiGian = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.panelMain.BorderThickness = 3;
             this.panelMain.Controls.Add(this.lblThoiGian);
             this.panelMain.CustomBorderThickness = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.panelMain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.panelMain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(217)))), ((int)(((byte)(222)))));
             this.panelMain.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.panelMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.panelMain.Location = new System.Drawing.Point(274, 13);
@@ -58,11 +58,26 @@
             this.panelMain.Size = new System.Drawing.Size(1150, 702);
             this.panelMain.TabIndex = 1;
             // 
+            // lblThoiGian
+            // 
+            this.lblThoiGian.BackColor = System.Drawing.Color.Transparent;
+            this.lblThoiGian.Font = new System.Drawing.Font("Playpen Sans", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThoiGian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(80)))), ((int)(((byte)(169)))));
+            this.lblThoiGian.Location = new System.Drawing.Point(42, 223);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(107, 167);
+            this.lblThoiGian.TabIndex = 0;
+            this.lblThoiGian.Text = "....";
+            this.lblThoiGian.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnMoFormChat
             // 
-            this.btnMoFormChat.BorderRadius = 10;
+            this.btnMoFormChat.BorderColor = System.Drawing.Color.White;
+            this.btnMoFormChat.BorderRadius = 20;
+            this.btnMoFormChat.BorderThickness = 4;
             this.btnMoFormChat.CheckedState.Parent = this.btnMoFormChat;
             this.btnMoFormChat.CustomImages.Parent = this.btnMoFormChat;
+            this.btnMoFormChat.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnMoFormChat.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormChat.ForeColor = System.Drawing.Color.White;
             this.btnMoFormChat.HoverState.Parent = this.btnMoFormChat;
@@ -79,9 +94,12 @@
             // 
             // btnMoFormLichHen
             // 
-            this.btnMoFormLichHen.BorderRadius = 10;
+            this.btnMoFormLichHen.BorderColor = System.Drawing.Color.White;
+            this.btnMoFormLichHen.BorderRadius = 20;
+            this.btnMoFormLichHen.BorderThickness = 4;
             this.btnMoFormLichHen.CheckedState.Parent = this.btnMoFormLichHen;
             this.btnMoFormLichHen.CustomImages.Parent = this.btnMoFormLichHen;
+            this.btnMoFormLichHen.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnMoFormLichHen.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormLichHen.ForeColor = System.Drawing.Color.White;
             this.btnMoFormLichHen.HoverState.Parent = this.btnMoFormLichHen;
@@ -98,9 +116,12 @@
             // 
             // btnMoFormDichVu
             // 
-            this.btnMoFormDichVu.BorderRadius = 10;
+            this.btnMoFormDichVu.BorderColor = System.Drawing.Color.White;
+            this.btnMoFormDichVu.BorderRadius = 20;
+            this.btnMoFormDichVu.BorderThickness = 4;
             this.btnMoFormDichVu.CheckedState.Parent = this.btnMoFormDichVu;
             this.btnMoFormDichVu.CustomImages.Parent = this.btnMoFormDichVu;
+            this.btnMoFormDichVu.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnMoFormDichVu.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormDichVu.ForeColor = System.Drawing.Color.White;
             this.btnMoFormDichVu.HoverState.Parent = this.btnMoFormDichVu;
@@ -117,9 +138,13 @@
             // 
             // btnMoFormThuCung
             // 
-            this.btnMoFormThuCung.BorderRadius = 10;
+            this.btnMoFormThuCung.BorderColor = System.Drawing.Color.White;
+            this.btnMoFormThuCung.BorderRadius = 20;
+            this.btnMoFormThuCung.BorderThickness = 4;
             this.btnMoFormThuCung.CheckedState.Parent = this.btnMoFormThuCung;
             this.btnMoFormThuCung.CustomImages.Parent = this.btnMoFormThuCung;
+            this.btnMoFormThuCung.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnMoFormThuCung.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnMoFormThuCung.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormThuCung.ForeColor = System.Drawing.Color.White;
             this.btnMoFormThuCung.HoverState.Parent = this.btnMoFormThuCung;
@@ -136,9 +161,13 @@
             // 
             // btnMoFormKhachHang
             // 
-            this.btnMoFormKhachHang.BorderRadius = 10;
+            this.btnMoFormKhachHang.BorderColor = System.Drawing.Color.White;
+            this.btnMoFormKhachHang.BorderRadius = 20;
+            this.btnMoFormKhachHang.BorderThickness = 4;
             this.btnMoFormKhachHang.CheckedState.Parent = this.btnMoFormKhachHang;
             this.btnMoFormKhachHang.CustomImages.Parent = this.btnMoFormKhachHang;
+            this.btnMoFormKhachHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnMoFormKhachHang.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnMoFormKhachHang.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormKhachHang.ForeColor = System.Drawing.Color.White;
             this.btnMoFormKhachHang.HoverState.Parent = this.btnMoFormKhachHang;
@@ -163,26 +192,15 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // timerThoiGian
             // 
-            this.timerThoiGian.Interval = 1000;
             this.timerThoiGian.Tick += new System.EventHandler(this.timerThoiGian_Tick);
-            // 
-            // lblThoiGian
-            // 
-            this.lblThoiGian.BackColor = System.Drawing.Color.Transparent;
-            this.lblThoiGian.Font = new System.Drawing.Font("Playpen Sans", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThoiGian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.lblThoiGian.Location = new System.Drawing.Point(42, 223);
-            this.lblThoiGian.Name = "lblThoiGian";
-            this.lblThoiGian.Size = new System.Drawing.Size(3, 2);
-            this.lblThoiGian.TabIndex = 0;
-            this.lblThoiGian.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmTrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1436, 727);

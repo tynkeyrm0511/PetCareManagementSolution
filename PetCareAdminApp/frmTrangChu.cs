@@ -75,22 +75,34 @@ namespace PetCareAdminApp
 
         private void btnMoFormDichVu_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frmDichVu());
         }
 
         private void btnMoFormLichHen_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frmLichHen());
         }
 
         private void btnMoFormChat_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frmChat());
         }
 
         private void timerThoiGian_Tick(object sender, EventArgs e)
         {
             lblThoiGian.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in panelMain.Controls)
+            {
+                if (control is Form)
+                {
+                    Form childForm = (Form)control;
+                    childForm.Close();
+                }
+            }
         }
     }
 }
