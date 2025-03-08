@@ -17,6 +17,23 @@ namespace PetCareAdminApp
             InitializeComponent();
         }
 
+        private void OpenChildForm(Form childForm)
+        {
+            // Xóa các control hiện có trong panelMain
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls[0].Dispose();
+            }
+
+            // Thiết lập form con
+            childForm.TopLevel = false;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.Show();
+        }
+
+
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
 
@@ -26,18 +43,27 @@ namespace PetCareAdminApp
         {
 
         }
+        private void btnMoFormKhachHang_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmKhachHang());
+        }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btnMoFormThuCung_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void btnMoFormDichVu_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void btnMoFormLichHen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMoFormChat_Click(object sender, EventArgs e)
         {
 
         }
