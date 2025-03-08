@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace PetCareAdminApp
 {
@@ -84,7 +86,31 @@ namespace PetCareAdminApp
                 }
             }
         }
+        private string ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Chuyển đổi ảnh thành mảng byte
+                image.Save(ms, format);
+                byte[] imageBytes = ms.ToArray();
 
+                // Chuyển đổi mảng byte thành chuỗi Base64
+                string base64String = Convert.ToBase64String(imageBytes);
+                return base64String;
+            }
+        }
+        private Image Base64ToImage(string base64String)
+        {
+            // Chuyển đổi chuỗi Base64 thành mảng byte
+            byte[] imageBytes = Convert.FromBase64String(base64String);
+            using (MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
+            {
+                // Chuyển đổi mảng byte thành ảnh
+                ms.Write(imageBytes, 0, imageBytes.Length);
+                Image image = Image.FromStream(ms, true);
+                return image;
+            }
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = quanlyDB.layChuoiKetNoi())
@@ -95,14 +121,27 @@ namespace PetCareAdminApp
                     return;
                 }
 
-                string query = "INSERT INTO ThuCung(TenThuCung, Loai, MaKhachHang, HinhAnh) " +
-                    "VALUES (@TenThuCung,@Loai,@MaKhachHang,@HinhAnh)";
+                // Kiểm tra định dạng ảnh để mã hóa đúng
+                ImageFormat format;
+                if (Path.GetExtension(picThuCung.ImageLocation).ToLower() == ".png")
+                {
+                    format = System.Drawing.Imaging.ImageFormat.Png;
+                }
+                else
+                {
+                    format = System.Drawing.Imaging.ImageFormat.Jpeg;
+                }
+
+                // Chuyển đổi ảnh thành chuỗi Base64
+                string base64String = ImageToBase64(picThuCung.Image, format);
+
+                string query = "INSERT INTO ThuCung(TenThuCung, Loai, MaKhachHang, HinhAnhBase64) " +
+                    "VALUES (@TenThuCung,@Loai,@MaKhachHang,@HinhAnhBase64)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@TenThuCung", txtTenThuCung.Text);
                 cmd.Parameters.AddWithValue("@Loai", cmbLoai.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@MaKhachHang", cmbChu.SelectedValue.ToString());
-              
-                cmd.Parameters.AddWithValue("@HinhAnh", picThuCung.ImageLocation);
+                cmd.Parameters.AddWithValue("@HinhAnhBase64", base64String);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -121,14 +160,27 @@ namespace PetCareAdminApp
                     return;
                 }
 
-                string query = "UPDATE ThuCung SET TenThuCung=@TenThuCung, Loai=@Loai, MaKhachHang=@MaKhachHang, HinhAnh=@HinhAnh WHERE MaThuCung=@MaThuCung";
+                // Kiểm tra định dạng ảnh để mã hóa đúng
+                ImageFormat format;
+                if (Path.GetExtension(picThuCung.ImageLocation).ToLower() == ".png")
+                {
+                    format = System.Drawing.Imaging.ImageFormat.Png;
+                }
+                else
+                {
+                    format = System.Drawing.Imaging.ImageFormat.Jpeg;
+                }
+
+                // Chuyển đổi ảnh thành chuỗi Base64
+                string base64String = ImageToBase64(picThuCung.Image, format);
+
+                string query = "UPDATE ThuCung SET TenThuCung=@TenThuCung, Loai=@Loai, MaKhachHang=@MaKhachHang, HinhAnhBase64=@HinhAnhBase64 WHERE MaThuCung=@MaThuCung";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaThuCung", txtMaThuCung.Text);
                 cmd.Parameters.AddWithValue("@TenThuCung", txtTenThuCung.Text);
                 cmd.Parameters.AddWithValue("@Loai", cmbLoai.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@MaKhachHang", cmbChu.SelectedValue.ToString());
-
-                cmd.Parameters.AddWithValue("@HinhAnh", picThuCung.ImageLocation);
+                cmd.Parameters.AddWithValue("@HinhAnhBase64", base64String);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -188,10 +240,10 @@ namespace PetCareAdminApp
                 txtTenThuCung.Text = row.Cells["TenThuCung"].Value.ToString();
                 cmbLoai.SelectedItem = row.Cells["Loai"].Value.ToString();
                 cmbChu.SelectedValue = row.Cells["MaKhachHang"].Value.ToString();
-                string hinhAnhPath = row.Cells["HinhAnh"].Value.ToString();
-                if (!string.IsNullOrEmpty(hinhAnhPath))
+                string base64String = row.Cells["HinhAnhBase64"].Value.ToString();
+                if (!string.IsNullOrEmpty(base64String))
                 {
-                    picThuCung.Image = Image.FromFile(hinhAnhPath);
+                    picThuCung.Image = Base64ToImage(base64String);
                 }
                 else
                 {
