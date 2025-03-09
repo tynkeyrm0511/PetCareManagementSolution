@@ -15,39 +15,11 @@
     }
 
     <h3>Danh Sách Thú Cưng</h3>
-    @if (Model.ThuCungs != null && Model.ThuCungs.Any())
-    {
-        <div class="row">
-            @foreach (var thuCung in Model.ThuCungs)
-            {
-                <div class="col-md-4 mb-4">
-                    <div class="pet-item">
-                        <img src="data:image/jpeg;base64,@thuCung.HinhAnhBase64" class="pet-image" alt="@thuCung.TenThuCung" />
-                        <div class="pet-footer">
-                            <div>
-                                <h5>@thuCung.TenThuCung</h5>
-                                <p>Loài: @thuCung.Loai</p>
-                            </div>
-                            <div class="pet-btn-container">
-                                <a asp-action="EditPet" asp-route-id="@thuCung.MaThuCung" class="btn btn-edit">Sửa</a>
-                                <a asp-action="DeletePet" asp-route-id="@thuCung.MaThuCung" class="btn btn-delete">Xóa</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    }
-    else
-    {
-        <p>Chưa có thông tin thú cưng. Bạn có thể thêm thú cưng mới!</p>
-    }
 
-    <div class="btn-container" style="margin-top: 15px;">
-        <button id="btnAddPet" class="btn btn-primary btn-block">Thêm Thú Cưng</button>
+    <div class="btn-container" style="margin-top: 15px;padding:15px">
+        <button id="btnAddPet" class="btn btn-primary btn-block">THÊM THÚ CƯNG MỚI</button>
     </div>
-
-    <div id="addPetForm" style="display:none; margin-top: 20px;">
+    <div id="addPetForm" style="display: none; margin-top: 20px;">
         <h3>Thêm Thú Cưng Mới</h3>
         <form asp-action="AddPet" enctype="multipart/form-data">
             <div class="form-group">
@@ -73,9 +45,46 @@
                 <input type="file" name="hinhAnhThuCung" class="form-control-file" />
             </div>
             <input type="hidden" asp-for="MaKhachHang" />
-            <div class="form-group btn-container">
-                <input type="submit" value="Thêm Thú Cưng" class="btn btn-primary btn-block" />
+            <div class="form-group btn-container ">
+                <input type="submit" value="Xác nhận" class="btn btn-primary btn-block style="margin-top: 15px;padding:15px" />
             </div>
         </form>
     </div>
+
+    @if (Model.ThuCungs != null && Model.ThuCungs.Any())
+    {
+        <div class="pet-list">
+            @foreach (var thuCung in Model.ThuCungs)
+            {
+                <div class="pet-item">
+                    <img src="data:image/jpeg;base64,@thuCung.HinhAnhBase64" class="pet-image" alt="@thuCung.TenThuCung" />
+                    <div class="pet-footer">
+                        <div>
+                            <h5>@thuCung.TenThuCung</h5>
+                            <p>Loài: @thuCung.Loai</p>
+                        </div>
+                        <div class="pet-btn-container">
+                            <a asp-action="EditPet" asp-route-id="@thuCung.MaThuCung" class="btn btn-edit">Sửa</a>
+                            <a asp-action="DeletePet" asp-route-id="@thuCung.MaThuCung" class="btn btn-delete">Xóa</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>Chưa có thông tin thú cưng. Bạn có thể thêm thú cưng mới!</p>
+    }
 </div>
+
+@section Scripts {
+    <script>
+        document.getElementById('btnAddPet').addEventListener('click', function() {
+            document.getElementById('addPetForm').style.display = 'block';
+        });
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

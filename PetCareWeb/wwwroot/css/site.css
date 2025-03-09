@@ -135,6 +135,14 @@ body {
     }
 
 
+/* CSS cho danh sách thú cưng */
+.pet-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Căn giữa các thẻ */
+}
+
 /* CSS cho dịch vụ thú cưng */
 .pet-item {
     display: flex;
@@ -148,6 +156,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     height: 100%;
+    width: 250px; /* Tăng chiều rộng của thẻ */
 }
 
     .pet-item:hover {
@@ -162,13 +171,17 @@ body {
 }
 
 .pet-footer {
-    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 .pet-btn-container {
     display: flex;
-    justify-content: center;
-    margin-top: auto;
+    justify-content: space-around; /* Căn chỉnh khoảng cách giữa các nút */
+    margin-top: 10px;
+    gap: 5px; /* Giảm khoảng cách giữa các nút */
 }
 
 /* CSS cho nút Sửa */
@@ -176,12 +189,11 @@ body {
     background-color: #FFB6C1;
     border-color: #FF69B4;
     color: white;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 16px; /* Tăng kích thước nút */
+    font-size: 16px; /* Tăng kích thước chữ */
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
     font-weight: bold;
-    margin-top: auto;
 }
 
     .pet-item .btn-edit:hover {
@@ -199,8 +211,8 @@ body {
     background-color: #ff4c4c;
     border-color: #ff0000;
     color: white;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 16px; /* Tăng kích thước nút */
+    font-size: 16px; /* Tăng kích thước chữ */
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
     font-weight: bold;
