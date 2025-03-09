@@ -246,24 +246,38 @@ namespace PetCareWeb.Controllers
             TempData["PetsMessage"] = "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại các trường thông tin.";
             return View("Pets", model);
         }
+        public IActionResult EditPet(int id)
+        {
+            var thuCung = _context.ThuCung.SingleOrDefault(tc => tc.MaThuCung == id);
+            if (thuCung == null)
+            {
+                return NotFound();
+            }
 
-        // POST: Account/EditPet
+            var model = new EditPetViewModel
+            {
+                MaThuCung = thuCung.MaThuCung,
+                TenThuCung = thuCung.TenThuCung,
+                Loai = thuCung.Loai
+            };
+
+            return View(model);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditPet(PetsViewModel model, IFormFile hinhAnhThuCung)
+        public async Task<IActionResult> EditPet(EditPetViewModel model, IFormFile hinhAnhThuCung)
         {
             if (ModelState.IsValid)
             {
-                var thuCung = _context.ThuCung.SingleOrDefault(tc => tc.MaThuCung == model.ThuCungs[0].MaThuCung);
-
+                var thuCung = _context.ThuCung.SingleOrDefault(tc => tc.MaThuCung == model.MaThuCung);
                 if (thuCung == null)
                 {
-                    TempData["PetsMessage"] = "Không tìm thấy thú cưng. Vui lòng thử lại.";
-                    return View("Pets", model);
+                    return NotFound();
                 }
 
-                thuCung.TenThuCung = model.ThuCungs[0].TenThuCung;
-                thuCung.Loai = model.ThuCungs[0].Loai;
+                thuCung.TenThuCung = model.TenThuCung;
+                thuCung.Loai = model.Loai;
 
                 if (hinhAnhThuCung != null)
                 {
@@ -274,15 +288,16 @@ namespace PetCareWeb.Controllers
                     }
                 }
 
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
-                TempData["PetsMessage"] = "Cập nhật thú cưng thành công.";
                 return RedirectToAction("Pets");
             }
 
-            TempData["PetsMessage"] = "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại các trường thông tin.";
-            return View("Pets", model);
+            return View(model);
         }
+
+
+
 
         // POST: Account/DeletePet
         [HttpPost]

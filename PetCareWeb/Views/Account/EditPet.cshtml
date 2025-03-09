@@ -1,0 +1,39 @@
+﻿@model PetCareWeb.Models.EditPetViewModel
+
+@{
+    ViewData["Title"] = "Sửa Thông Tin Thú Cưng";
+}
+
+<h2>Sửa Thông Tin Thú Cưng</h2>
+
+<form asp-action="EditPet" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="MaThuCung" />
+
+    <div class="form-group">
+        <label asp-for="TenThuCung" class="control-label"></label>
+        <input asp-for="TenThuCung" class="form-control" />
+        <span asp-validation-for="TenThuCung" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Loai" class="control-label"></label>
+        <select asp-for="Loai" class="form-control">
+            <option value="Chó">Chó</option>
+            <option value="Mèo">Mèo</option>
+            <option value="Chim">Chim</option>
+            <option value="Thỏ">Thỏ</option>
+            <option value="Chuột">Chuột</option>
+            <option value="Sóc">Sóc</option>
+        </select>
+        <span asp-validation-for="Loai" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Hình ảnh</label>
+        <input type="file" name="hinhAnhThuCung" class="form-control-file" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Cập Nhật Thú Cưng" class="btn btn-primary" />
+    </div>
+</form>

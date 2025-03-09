@@ -21,11 +21,16 @@
             @foreach (var thuCung in Model.ThuCungs)
             {
                 <div class="col-md-4 mb-4">
-                    <div class="service-item">
-                        <img src="data:image/jpeg;base64,@thuCung.HinhAnhBase64" class="service-image" alt="@thuCung.TenThuCung" />
-                        <div class="service-footer">
-                            <h5>@thuCung.TenThuCung</h5>
-                            <p>Loài: @thuCung.Loai</p>
+                    <div class="pet-item">
+                        <img src="data:image/jpeg;base64,@thuCung.HinhAnhBase64" class="pet-image" alt="@thuCung.TenThuCung" />
+                        <div class="pet-footer">
+                            <div>
+                                <h5>@thuCung.TenThuCung</h5>
+                                <p>Loài: @thuCung.Loai</p>
+                            </div>
+                            <div class="pet-btn-container">
+                                <a asp-action="EditPet" asp-route-id="@thuCung.MaThuCung" class="btn btn-edit">Sửa</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,14 +78,3 @@
         </form>
     </div>
 </div>
-
-@section Scripts {
-    <script>
-        document.getElementById('btnAddPet').addEventListener('click', function() {
-            document.getElementById('addPetForm').style.display = 'block';
-        });
-    </script>
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
