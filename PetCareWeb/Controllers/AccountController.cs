@@ -299,24 +299,29 @@ namespace PetCareWeb.Controllers
 
 
 
-        // POST: Account/DeletePet
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeletePet(int maThuCung)
+        public IActionResult DeletePet(int id)
         {
-            var thuCung = _context.ThuCung.SingleOrDefault(tc => tc.MaThuCung == maThuCung);
-
+            var thuCung = _context.ThuCung.SingleOrDefault(tc => tc.MaThuCung == id);
             if (thuCung == null)
             {
-                TempData["PetsMessage"] = "Không tìm thấy thú cưng. Vui lòng thử lại.";
-                return RedirectToAction("Pets");
+                return NotFound();
             }
 
-            _context.ThuCung.Remove(thuCung);
-            _context.SaveChanges();
-
-            TempData["PetsMessage"] = "Xóa thú cưng thành công.";
-            return RedirectToAction("Pets");
+            return View(thuCung);
         }
+
+        [HttpPost, ActionName("DeletePet")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var thuCung = await _context.ThuCung.FindAsync(id);
+            if (thuCung != null)
+            {
+                _context.ThuCung.Remove(thuCung);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Pets));
+        }
+
     }
 }

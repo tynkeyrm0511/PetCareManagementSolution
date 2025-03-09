@@ -1,0 +1,17 @@
+﻿@model PetCareWeb.Models.ThuCung
+
+@{
+    ViewData["Title"] = "Xóa Thú Cưng";
+}
+
+<h2>Xóa Thú Cưng</h2>
+
+<h3>Bạn có chắc chắn muốn xóa thú cưng @Model.TenThuCung không?</h3>
+
+<div>
+    <form asp-action="DeletePet">
+        <input type="hidden" asp-for="MaThuCung" />
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a asp-action="Pets" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>
