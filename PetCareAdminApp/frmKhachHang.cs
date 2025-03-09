@@ -65,13 +65,15 @@ namespace PetCareAdminApp
         {
             using (SqlConnection conn = quanlyDB.layChuoiKetNoi())
             {
-                string query = "UPDATE KhachHang SET TenKhachHang=@TenKhachHang," +
-                    "SoDienThoai=@SoDienThoai, Email=@Email, MatKhau=@MatKhau";
+                string query = "UPDATE KhachHang SET TenKhachHang=@TenKhachHang, " +
+                    "SoDienThoai=@SoDienThoai, Email=@Email, MatKhau=@MatKhau " +
+                    "WHERE MaKhachHang=@MaKhachHang";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@TenKhachHang", txtTenKhachHang.Text);
                 cmd.Parameters.AddWithValue("@SoDienThoai", txtSoDienThoai.Text);
                 cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@MatKhau", txtMatKhau.Text);
+                cmd.Parameters.AddWithValue("@MaKhachHang", txtMaKhachHang.Text); // Đảm bảo rằng MaKhachHang được lấy đúng cách
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }

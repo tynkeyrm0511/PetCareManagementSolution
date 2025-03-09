@@ -8,6 +8,19 @@
     <h1 class="display-4">Chào mừng đến với PetCareWeb</h1>
 </div>
 
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-warning" role="alert">
+        @TempData["Message"]
+    </div>
+}
+@if (TempData["LogoutMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["LogoutMessage"]
+    </div>
+}
+
 <p>Dưới đây là danh sách các dịch vụ hiện đang có:</p>
 
 <div class="services-grid">
@@ -18,6 +31,12 @@
             <h2>@dichVu.TenDichVu</h2>
             <p>@dichVu.MoTa</p>
             <p><strong>Giá:</strong> @dichVu.Gia VND</p>
+            <div class="service-footer">
+                <form asp-controller="Appointment" asp-action="Book" method="post">
+                    <input type="hidden" name="dichVuId" value="@dichVu.MaDichVu" />
+                    <button type="submit" class="btn btn-primary">ĐẶT LỊCH HẸN</button>
+                </form>
+            </div>
         </div>
     }
 </div>

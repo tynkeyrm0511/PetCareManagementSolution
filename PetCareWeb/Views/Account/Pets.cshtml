@@ -1,0 +1,39 @@
+﻿@model PetCareWeb.Models.PetsViewModel
+
+@{
+    ViewData["Title"] = "Quản Lý Thú Cưng";
+}
+
+<div class="form-container">
+    <h2>Quản Lý Thú Cưng</h2>
+
+    @if (TempData["PetsMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["PetsMessage"]
+        </div>
+    }
+
+    <h3>Danh Sách Thú Cưng</h3>
+    @if (Model.ThuCungs != null && Model.ThuCungs.Any())
+    {
+        <div class="row">
+            @foreach (var thuCung in Model.ThuCungs)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="service-item">
+                        <img src="data:image/jpeg;base64,@thuCung.HinhAnhBase64" class="service-image" alt="@thuCung.TenThuCung" />
+                        <div class="service-footer">
+                            <h5>@thuCung.TenThuCung</h5>
+                            <p>Loài: @thuCung.Loai</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>Chưa có thông tin thú cưng. Bạn có thể thêm thú cưng mới!</p>
+    }
+</div>

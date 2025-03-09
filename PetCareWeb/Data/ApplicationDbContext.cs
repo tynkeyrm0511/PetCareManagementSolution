@@ -10,5 +10,7 @@ namespace PetCareWeb.Data
         }
 
         public DbSet<DichVu> DichVus { get; set; }
+        public DbSet<KhachHang> KhachHang { get; set; }
+        public DbSet<ThuCung> ThuCung { get; set; }
     }
 }

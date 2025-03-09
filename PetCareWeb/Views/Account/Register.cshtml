@@ -1,0 +1,46 @@
+﻿@model PetCareWeb.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Đăng Ký";
+}
+
+<div class="form-container">
+    <h2>Đăng Ký</h2>
+
+    <form asp-action="Register">
+        <div class="form-group">
+            <label asp-for="TenKhachHang" class="control-label"></label>
+            <input asp-for="TenKhachHang" class="form-control" />
+            <span asp-validation-for="TenKhachHang" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MatKhau" class="control-label"></label>
+            <input asp-for="MatKhau" class="form-control" />
+            <span asp-validation-for="MatKhau" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmMatKhau" class="control-label"></label>
+            <input asp-for="ConfirmMatKhau" class="form-control" />
+            <span asp-validation-for="ConfirmMatKhau" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SoDienThoai" class="control-label"></label>
+            <input asp-for="SoDienThoai" class="form-control" />
+            <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+        </div>
+        <div class="form-group btn-container">
+            <input type="submit" value="Đăng Ký" class="btn btn-primary btn-block" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

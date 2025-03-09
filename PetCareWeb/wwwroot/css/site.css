@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -27,8 +27,11 @@ body {
     gap: 20px;
     padding: 20px;
 }
-
+/* CSS cho Trang Chủ */
 .service-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
     border-radius: 5px;
@@ -48,3 +51,85 @@ body {
     border-radius: 5px;
     margin-bottom: 15px;
 }
+
+.service-footer {
+    margin-top: auto;
+}
+
+.alert {
+    margin: 20px 0;
+}
+
+/* CSS cho nút Đặt lịch hẹn */
+.service-item .btn-primary {
+    background-color: #6EE3CE;
+    border-color: #499789;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight:bold;
+}
+
+    .service-item .btn-primary:hover {
+        background-color: #00DCA9;
+        transform: scale(1.1);
+    }
+
+    .service-item .btn-primary:focus {
+        background-color: #00DCA9;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+/* CSS cho form đăng nhập và đăng ký */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #6EE3CE;
+        font-weight: bold;
+    }
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    margin-top: 10px;
+}
+
+.form-group .text-danger {
+    margin-top: 5px;
+}
+
+.btn-container {
+    text-align: center; /* Căn giữa nút */
+}
+
+.btn-primary {
+    background-color: #6EE3CE;
+    border-color: #499789;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+    .btn-primary:hover {
+        background-color: #00DCA9;
+        transform: scale(1.05);
+    }
+
+    .btn-primary:focus {
+        background-color: #00DCA9;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
