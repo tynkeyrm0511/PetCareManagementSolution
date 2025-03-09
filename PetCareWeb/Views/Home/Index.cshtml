@@ -1,8 +1,23 @@
-﻿@{
+﻿@model IEnumerable<PetCareWeb.Models.DichVu>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Chào mừng đến với PetCareWeb</h1>
+</div>
+
+<p>Dưới đây là danh sách các dịch vụ hiện đang có:</p>
+
+<div class="services-grid">
+    @foreach (var dichVu in Model)
+    {
+        <div class="service-item">
+            <img src="data:image/jpeg;base64,@dichVu.HinhAnhBase64" alt="@dichVu.TenDichVu" class="service-image" />
+            <h2>@dichVu.TenDichVu</h2>
+            <p>@dichVu.MoTa</p>
+            <p><strong>Giá:</strong> @dichVu.Gia VND</p>
+        </div>
+    }
 </div>

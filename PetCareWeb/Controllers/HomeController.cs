@@ -1,21 +1,24 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using PetCareWeb.Data;
 using PetCareWeb.Models;
 
 namespace PetCareWeb.Controllers;
 
 public class HomeController : Controller
 {
+    private readonly ApplicationDbContext _context;
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ApplicationDbContext context, ILogger<HomeController> logger)
     {
+        _context = context;
         _logger = logger;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var dichVus = _context.DichVus.ToList();
+        return View(dichVus);
     }
 
     public IActionResult Privacy()
