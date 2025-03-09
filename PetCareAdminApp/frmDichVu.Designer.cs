@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.picThuCung = new System.Windows.Forms.PictureBox();
+            this.picDichVu = new System.Windows.Forms.PictureBox();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
@@ -44,10 +44,10 @@
             this.txtTenDichVu = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaDichVu = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBoxThongTin = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtMoTa = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnChonHinh = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picThuCung)).BeginInit();
+            this.txtMoTa = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.groupBoxThongTin.SuspendLayout();
@@ -57,15 +57,15 @@
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
-            // picThuCung
+            // picDichVu
             // 
-            this.picThuCung.Image = global::PetCareAdminApp.Properties.Resources.bathing;
-            this.picThuCung.Location = new System.Drawing.Point(16, 320);
-            this.picThuCung.Name = "picThuCung";
-            this.picThuCung.Size = new System.Drawing.Size(230, 230);
-            this.picThuCung.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picThuCung.TabIndex = 19;
-            this.picThuCung.TabStop = false;
+            this.picDichVu.Image = global::PetCareAdminApp.Properties.Resources.bathing;
+            this.picDichVu.Location = new System.Drawing.Point(16, 320);
+            this.picDichVu.Name = "picDichVu";
+            this.picDichVu.Size = new System.Drawing.Size(230, 230);
+            this.picDichVu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDichVu.TabIndex = 19;
+            this.picDichVu.TabStop = false;
             // 
             // btnTimKiem
             // 
@@ -140,7 +140,9 @@
             // 
             // txtTimKiem
             // 
+            this.txtTimKiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.txtTimKiem.BorderRadius = 10;
+            this.txtTimKiem.BorderThickness = 2;
             this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTimKiem.DefaultText = "";
             this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -154,6 +156,7 @@
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.HoverState.Parent = this.txtTimKiem;
             this.txtTimKiem.Location = new System.Drawing.Point(452, 9);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderText = "Nhập tên thú cưng cần tìm kiếm...";
@@ -164,30 +167,30 @@
             // 
             // dgvDichVu
             // 
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            this.dgvDichVu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvDichVu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDichVu.BackgroundColor = System.Drawing.Color.White;
             this.dgvDichVu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDichVu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDichVu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDichVu.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDichVu.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDichVu.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDichVu.EnableHeadersVisualStyles = false;
             this.dgvDichVu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -219,6 +222,7 @@
             this.dgvDichVu.ThemeStyle.RowsStyle.Height = 22;
             this.dgvDichVu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDichVu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellClick);
             // 
             // guna2Panel2
             // 
@@ -236,7 +240,9 @@
             // 
             // txtTenDichVu
             // 
+            this.txtTenDichVu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.txtTenDichVu.BorderRadius = 10;
+            this.txtTenDichVu.BorderThickness = 2;
             this.txtTenDichVu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenDichVu.DefaultText = "";
             this.txtTenDichVu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -261,7 +267,9 @@
             // 
             // txtMaDichVu
             // 
+            this.txtMaDichVu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.txtMaDichVu.BorderRadius = 10;
+            this.txtMaDichVu.BorderThickness = 2;
             this.txtMaDichVu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaDichVu.DefaultText = "";
             this.txtMaDichVu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -279,7 +287,7 @@
             this.txtMaDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaDichVu.Name = "txtMaDichVu";
             this.txtMaDichVu.PasswordChar = '\0';
-            this.txtMaDichVu.PlaceholderText = "ID Thú Cưng";
+            this.txtMaDichVu.PlaceholderText = "Mã dịch vụ";
             this.txtMaDichVu.SelectedText = "";
             this.txtMaDichVu.ShadowDecoration.Parent = this.txtMaDichVu;
             this.txtMaDichVu.Size = new System.Drawing.Size(239, 50);
@@ -294,7 +302,7 @@
             this.groupBoxThongTin.Controls.Add(this.btnChonHinh);
             this.groupBoxThongTin.Controls.Add(this.txtMoTa);
             this.groupBoxThongTin.Controls.Add(this.txtGia);
-            this.groupBoxThongTin.Controls.Add(this.picThuCung);
+            this.groupBoxThongTin.Controls.Add(this.picDichVu);
             this.groupBoxThongTin.Controls.Add(this.txtTenDichVu);
             this.groupBoxThongTin.Controls.Add(this.txtMaDichVu);
             this.groupBoxThongTin.FillColor = System.Drawing.Color.White;
@@ -304,34 +312,28 @@
             this.groupBoxThongTin.Size = new System.Drawing.Size(265, 599);
             this.groupBoxThongTin.TabIndex = 15;
             // 
-            // txtGia
+            // btnChonHinh
             // 
-            this.txtGia.BorderRadius = 10;
-            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGia.DefaultText = "";
-            this.txtGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.DisabledState.Parent = this.txtGia;
-            this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.FocusedState.Parent = this.txtGia;
-            this.txtGia.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.HoverState.Parent = this.txtGia;
-            this.txtGia.Location = new System.Drawing.Point(12, 135);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.PasswordChar = '\0';
-            this.txtGia.PlaceholderText = "Giá dịch vụ";
-            this.txtGia.SelectedText = "";
-            this.txtGia.ShadowDecoration.Parent = this.txtGia;
-            this.txtGia.Size = new System.Drawing.Size(239, 50);
-            this.txtGia.TabIndex = 20;
+            this.btnChonHinh.BorderRadius = 10;
+            this.btnChonHinh.CheckedState.Parent = this.btnChonHinh;
+            this.btnChonHinh.CustomImages.Parent = this.btnChonHinh;
+            this.btnChonHinh.Font = new System.Drawing.Font("Playpen Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonHinh.ForeColor = System.Drawing.Color.White;
+            this.btnChonHinh.HoverState.Parent = this.btnChonHinh;
+            this.btnChonHinh.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnChonHinh.Location = new System.Drawing.Point(6, 556);
+            this.btnChonHinh.Name = "btnChonHinh";
+            this.btnChonHinh.ShadowDecoration.Parent = this.btnChonHinh;
+            this.btnChonHinh.Size = new System.Drawing.Size(250, 35);
+            this.btnChonHinh.TabIndex = 22;
+            this.btnChonHinh.Text = "Chọn ảnh dịch vụ";
+            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
             // 
             // txtMoTa
             // 
+            this.txtMoTa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.txtMoTa.BorderRadius = 10;
+            this.txtMoTa.BorderThickness = 2;
             this.txtMoTa.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMoTa.DefaultText = "";
             this.txtMoTa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -355,22 +357,32 @@
             this.txtMoTa.Size = new System.Drawing.Size(239, 126);
             this.txtMoTa.TabIndex = 21;
             // 
-            // btnChonHinh
+            // txtGia
             // 
-            this.btnChonHinh.BorderRadius = 10;
-            this.btnChonHinh.CheckedState.Parent = this.btnChonHinh;
-            this.btnChonHinh.CustomImages.Parent = this.btnChonHinh;
-            this.btnChonHinh.Font = new System.Drawing.Font("Playpen Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonHinh.ForeColor = System.Drawing.Color.White;
-            this.btnChonHinh.HoverState.Parent = this.btnChonHinh;
-            this.btnChonHinh.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnChonHinh.Location = new System.Drawing.Point(6, 556);
-            this.btnChonHinh.Name = "btnChonHinh";
-            this.btnChonHinh.ShadowDecoration.Parent = this.btnChonHinh;
-            this.btnChonHinh.Size = new System.Drawing.Size(250, 35);
-            this.btnChonHinh.TabIndex = 22;
-            this.btnChonHinh.Text = "Chọn ảnh dịch vụ";
-            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
+            this.txtGia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.txtGia.BorderRadius = 10;
+            this.txtGia.BorderThickness = 2;
+            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGia.DefaultText = "";
+            this.txtGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGia.DisabledState.Parent = this.txtGia;
+            this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGia.FocusedState.Parent = this.txtGia;
+            this.txtGia.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGia.HoverState.Parent = this.txtGia;
+            this.txtGia.Location = new System.Drawing.Point(12, 135);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.PasswordChar = '\0';
+            this.txtGia.PlaceholderText = "Giá dịch vụ";
+            this.txtGia.SelectedText = "";
+            this.txtGia.ShadowDecoration.Parent = this.txtGia;
+            this.txtGia.Size = new System.Drawing.Size(239, 50);
+            this.txtGia.TabIndex = 20;
             // 
             // frmDichVu
             // 
@@ -389,7 +401,7 @@
             this.Name = "frmDichVu";
             this.Text = "DichVu";
             this.Load += new System.EventHandler(this.frmDichVu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picThuCung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.groupBoxThongTin.ResumeLayout(false);
@@ -408,7 +420,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2DataGridView dgvDichVu;
         private Guna.UI2.WinForms.Guna2Panel groupBoxThongTin;
-        private System.Windows.Forms.PictureBox picThuCung;
+        private System.Windows.Forms.PictureBox picDichVu;
         private Guna.UI2.WinForms.Guna2TextBox txtTenDichVu;
         private Guna.UI2.WinForms.Guna2TextBox txtMaDichVu;
         private Guna.UI2.WinForms.Guna2TextBox txtMoTa;

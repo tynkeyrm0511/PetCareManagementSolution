@@ -220,6 +220,9 @@
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLichHen.resx">
+      <DependentUpon>frmLichHen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThuCung.resx">
       <DependentUpon>frmThuCung.cs</DependentUpon>
     </EmbeddedResource>
