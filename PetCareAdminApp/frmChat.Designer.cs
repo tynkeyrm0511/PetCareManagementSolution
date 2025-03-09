@@ -32,9 +32,9 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.txtMessage = new Guna.UI2.WinForms.Guna2TextBox();
             this.lstCustomers = new System.Windows.Forms.ListBox();
-            this.lstMessages = new System.Windows.Forms.ListBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnSend = new Guna.UI2.WinForms.Guna2Button();
+            this.listBoxMessages = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -78,16 +78,6 @@
             this.lstCustomers.Size = new System.Drawing.Size(247, 580);
             this.lstCustomers.TabIndex = 0;
             // 
-            // lstMessages
-            // 
-            this.lstMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstMessages.FormattingEnabled = true;
-            this.lstMessages.ItemHeight = 24;
-            this.lstMessages.Location = new System.Drawing.Point(265, 48);
-            this.lstMessages.Name = "lstMessages";
-            this.lstMessages.Size = new System.Drawing.Size(715, 484);
-            this.lstMessages.TabIndex = 1;
-            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
@@ -117,13 +107,21 @@
             this.btnSend.TabIndex = 35;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
+            // listBoxMessages
+            // 
+            this.listBoxMessages.FormattingEnabled = true;
+            this.listBoxMessages.Location = new System.Drawing.Point(517, 48);
+            this.listBoxMessages.Name = "listBoxMessages";
+            this.listBoxMessages.Size = new System.Drawing.Size(193, 485);
+            this.listBoxMessages.TabIndex = 38;
+            // 
             // frmChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 617);
+            this.Controls.Add(this.listBoxMessages);
             this.Controls.Add(this.lstCustomers);
-            this.Controls.Add(this.lstMessages);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessage);
@@ -142,7 +140,7 @@
         private Guna.UI2.WinForms.Guna2Button btnSend;
         private Guna.UI2.WinForms.Guna2TextBox txtMessage;
         private System.Windows.Forms.ListBox lstCustomers;
-        private System.Windows.Forms.ListBox lstMessages;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.ListBox listBoxMessages;
     }
 }

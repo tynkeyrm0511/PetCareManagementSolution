@@ -13,6 +13,7 @@ namespace PetCareAdminApp
     public partial class frmChat: Form
     {
         private HubConnection connection;
+        private bool isConnected;
         public frmChat()
         {
             InitializeComponent();
@@ -26,36 +27,54 @@ namespace PetCareAdminApp
         private async void InitializeSignalR()
         {
             connection = new HubConnectionBuilder()
-                .WithUrl("https://your-signalr-server-url/chatHub")
+                .WithUrl("https://localhost:7181/chatHub")
                 .Build();
 
             connection.On<string, string>("ReceiveMessage", (user, message) =>
             {
-                var newMessage = $"{user}: {message}";
-                lstMessages.Items.Add(newMessage);
+                AppendMessageToListBox($"{user}: {message}");
             });
 
             try
             {
                 await connection.StartAsync();
-                lstMessages.Items.Add("Connection started");
+                isConnected = true;
+                AppendMessageToListBox("System: Đã kết nối tới khách hàng!");
             }
             catch (Exception ex)
             {
-                lstMessages.Items.Add($"Connection error: {ex.Message}");
+                AppendMessageToListBox($"System: Kết nối tới khách hàng thất bại!!!: {ex.Message}");
             }
         }
 
+        private void AppendMessageToListBox(string message)
+        {
+            if (listBoxMessages.InvokeRequired)
+            {
+                listBoxMessages.Invoke(new Action(() =>
+                {
+                    listBoxMessages.Items.Add(message);
+                    listBoxMessages.TopIndex = listBoxMessages.Items.Count - 1;
+                }));
+            }
+            else
+            {
+                listBoxMessages.Items.Add(message);
+                listBoxMessages.TopIndex = listBoxMessages.Items.Count - 1;
+            }
+        }
         private async void btnSend_Click(object sender, EventArgs e)
         {
-            if (connection.State == HubConnectionState.Connected)
+            if (isConnected)
             {
-                await connection.InvokeAsync("SendMessage", "Admin", txtMessage.Text);
+                var message = txtMessage.Text;
+                await connection.InvokeAsync("SendMessage", "Admin:", message);
+                //AppendMessageToListBox($"You: {message}");
                 txtMessage.Clear();
             }
             else
             {
-                lstMessages.Items.Add("Unable to send message: not connected");
+                AppendMessageToListBox("System: Unable to send message: not connected");
             }
         }
     }
