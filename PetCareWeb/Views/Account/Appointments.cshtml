@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PetCareWeb.Models.AppointmentViewModel>
+
+@{
+    ViewData["Title"] = "Quản Lý Lịch Hẹn";
+}
+
+<h2>Quản Lý Lịch Hẹn</h2>
+
+@if (!Model.Any())
+{
+    <p>Chưa có lịch hẹn nào.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ngày Hẹn</th>
+                <th>Thú Cưng</th>
+                <th>Dịch Vụ</th>
+                <th>Trạng Thái</th>
+                <th>Giờ Hẹn</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model)
+            {
+                <tr>
+                    <td>@appointment.NgayHen.ToString("dd/MM/yyyy")</td>
+                    <td>@appointment.TenThuCung</td>
+                    <td>@appointment.TenDichVu</td>
+                    <td>@appointment.TrangThai</td>
+                    <td>@appointment.GioHen.ToString(@"hh\:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<a href="@Url.Action("CreateAppointment", "Account")" class="btn btn-success">Tạo Lịch Hẹn Mới</a>

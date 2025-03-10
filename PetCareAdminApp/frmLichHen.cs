@@ -84,9 +84,9 @@ namespace PetCareAdminApp
         private void loadTrangThai()
         {
             cmbTrangThai.Items.Clear();
-            cmbTrangThai.Items.Add("Đã đặt");
-            cmbTrangThai.Items.Add("Đang thực hiện");
-            cmbTrangThai.Items.Add("Hoàn thành");
+            cmbTrangThai.Items.Add("Đang chờ duyệt");
+            cmbTrangThai.Items.Add("Đã duyệt");
+            cmbTrangThai.Items.Add("Đã từ chối");
         }
 
 

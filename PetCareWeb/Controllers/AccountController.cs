@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace PetCareWeb.Controllers
 {
@@ -85,10 +86,11 @@ namespace PetCareWeb.Controllers
                 if (khachHang != null)
                 {
                     var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name, khachHang.TenKhachHang),
-                        new Claim(ClaimTypes.Email, khachHang.Email)
-                    };
+            {
+                new Claim(ClaimTypes.Name, khachHang.TenKhachHang),
+                new Claim(ClaimTypes.Email, khachHang.Email),
+                new Claim("MaKhachHang", khachHang.MaKhachHang.ToString()) // Thêm MaKhachHang vào claims
+            };
 
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
@@ -322,6 +324,31 @@ namespace PetCareWeb.Controllers
             }
             return RedirectToAction(nameof(Pets));
         }
+        // GET: Account/Appointments
+        public async Task<IActionResult> Appointments()
+        {
+            var maKhachHang = User.FindFirstValue("MaKhachHang");
+            if (maKhachHang == null)
+            {
+                return Challenge();
+            }
 
+            var appointments = await _context.LichHen
+                .Include(lh => lh.KhachHang)
+                .Include(lh => lh.ThuCung)
+                .Include(lh => lh.DichVu)
+                .Where(lh => lh.MaKhachHang.ToString() == maKhachHang)
+                .Select(lh => new AppointmentViewModel
+                {
+                    MaLichHen = lh.MaLichHen,
+                    NgayHen = lh.NgayHen,
+                    TenThuCung = lh.ThuCung.TenThuCung,
+                    TenDichVu = lh.DichVu.TenDichVu,
+                    TrangThai = lh.TrangThai,
+                    GioHen = lh.GioHen
+                }).ToListAsync();
+
+            return View(appointments);
+        }
     }
 }
