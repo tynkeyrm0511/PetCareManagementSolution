@@ -125,6 +125,7 @@ namespace PetCareAdminApp
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //aaa
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgvKhachHang.Rows[e.RowIndex];
