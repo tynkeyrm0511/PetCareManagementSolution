@@ -1,0 +1,46 @@
+﻿@model PetCareWeb.Models.CreateAppointmentViewModel
+
+@{
+    ViewData["Title"] = "Tạo Lịch Hẹn Mới";
+}
+
+<h2>Tạo Lịch Hẹn Mới</h2>
+
+<form asp-action="CreateAppointment" method="post">
+    <div class="form-group">
+        <label asp-for="NgayHen" class="control-label"></label>
+        <input asp-for="NgayHen" class="form-control" />
+        <span asp-validation-for="NgayHen" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MaThuCung" class="control-label">Thú Cưng</label>
+        <select asp-for="MaThuCung" class="form-control">
+            <option value="">Chọn thú cưng</option>
+            @foreach (var thuCung in Model.ThuCungs)
+            {
+                <option value="@thuCung.MaThuCung">@thuCung.TenThuCung</option>
+            }
+        </select>
+        <span asp-validation-for="MaThuCung" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MaDichVu" class="control-label">Dịch Vụ</label>
+        <select asp-for="MaDichVu" class="form-control">
+            <option value="">Chọn dịch vụ</option>
+            @foreach (var dichVu in Model.DichVus)
+            {
+                <option value="@dichVu.MaDichVu">@dichVu.TenDichVu</option>
+            }
+        </select>
+        <span asp-validation-for="MaDichVu" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GioHen" class="control-label"></label>
+        <input asp-for="GioHen" class="form-control" />
+        <span asp-validation-for="GioHen" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Tạo Lịch Hẹn" class="btn btn-primary" />
+    </div>
+</form>
+<a href="@Url.Action("Appointments", "Account")" class="btn btn-secondary">Quay lại</a>

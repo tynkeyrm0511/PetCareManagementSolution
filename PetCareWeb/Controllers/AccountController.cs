@@ -18,6 +18,8 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PetCareWeb.Controllers
 {
@@ -25,10 +27,12 @@ namespace PetCareWeb.Controllers
     public class AccountController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<AccountController> _logger;
 
-        public AccountController(ApplicationDbContext context)
+        public AccountController(ApplicationDbContext context, ILogger<AccountController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Account/Register
@@ -349,6 +353,85 @@ namespace PetCareWeb.Controllers
                 }).ToListAsync();
 
             return View(appointments);
+        }
+        // GET: Account/CreateAppointment
+        public IActionResult CreateAppointment()
+        {
+            var maKhachHang = User.FindFirstValue("MaKhachHang");
+            if (maKhachHang == null)
+            {
+                return Challenge();
+            }
+
+            var viewModel = new CreateAppointmentViewModel
+            {
+                ThuCungs = _context.ThuCung.Where(tc => tc.MaKhachHang.ToString() == maKhachHang).ToList(),
+                DichVus = _context.DichVus.ToList()
+            };
+
+            return View(viewModel);
+        }
+        // POST: Account/CreateAppointment
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateAppointment(CreateAppointmentViewModel model)
+        {
+            var maKhachHang = User.FindFirstValue("MaKhachHang");
+            if (maKhachHang == null)
+            {
+                return Challenge();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var lichHen = new LichHen
+                {
+                    NgayHen = model.NgayHen,
+                    MaKhachHang = int.Parse(maKhachHang),
+                    MaThuCung = model.MaThuCung,
+                    MaDichVu = model.MaDichVu,
+                    TrangThai = "Đang chờ duyệt",
+                    GioHen = model.GioHen
+                };
+
+                _context.LichHen.Add(lichHen);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Appointments));
+            }
+
+            model.ThuCungs = _context.ThuCung.Where(tc => tc.MaKhachHang.ToString() == maKhachHang).ToList();
+            model.DichVus = _context.DichVus.ToList();
+            return View(model);
+        }
+              
+        // GET: Account/DeleteAppointment
+        public async Task<IActionResult> DeleteAppointment(int? id)
+        {
+            var maKhachHang = User.FindFirstValue("MaKhachHang");
+            if (maKhachHang == null)
+            {
+                return Challenge();
+            }
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var lichHen = await _context.LichHen
+                .Include(lh => lh.KhachHang)
+                .Include(lh => lh.ThuCung)
+                .Include(lh => lh.DichVu)
+                .SingleOrDefaultAsync(m => m.MaLichHen == id && m.MaKhachHang.ToString() == maKhachHang);
+
+            if (lichHen == null || lichHen.TrangThai != "Đang chờ duyệt")
+            {
+                return NotFound();
+            }
+
+            _context.LichHen.Remove(lichHen);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Appointments));
         }
     }
 }

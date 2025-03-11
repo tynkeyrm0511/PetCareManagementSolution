@@ -1,31 +1,43 @@
 ﻿@{
-    ViewData["Title"] = "Chat";
+    ViewData["Title"] = "Chat với Admin";
 }
 
-<h1>Chat with Admin</h1>
-<div id="chat">
-    <input type="text" id="messageInput" placeholder="Enter your message..." />
-    <button onclick="sendMessage()">Send</button>
+<h2>Chat với Admin</h2>
+
+<div>
     <ul id="messagesList"></ul>
 </div>
+<input type="text" id="messageInput" />
+<button id="sendButton">Gửi</button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.14/signalr.min.js"></script>
-<script>
-    const connection = new signalR.HubConnectionBuilder()
-        .withUrl("/chatHub")
-        .build();
+@section Scripts {
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chatHub")
+            .build();
 
-    connection.on("ReceiveMessage", (user, message) => {
-        const msg = `${user}: ${message}`;
-        const li = document.createElement("li");
-        li.textContent = msg;
-        document.getElementById("messagesList").appendChild(li);
-    });
+        connection.on("ReceiveMessage", (user, message) => {
+            const msg = `${user}: ${message}`;
+            const li = document.createElement("li");
+            li.textContent = msg;
+            document.getElementById("messagesList").appendChild(li);
+        });
 
-    connection.start().catch(err => console.error(err.toString()));
+        connection.on("UserConnected", (userId) => {
+            console.log(`User connected: ${userId}`);
+        });
 
-    function sendMessage() {
-        const message = document.getElementById("messageInput").value;
-        connection.invoke("SendMessage", "Customer", message).catch(err => console.error(err.toString()));
-    }
-</script>
+        connection.on("UserDisconnected", (userId) => {
+            console.log(`User disconnected: ${userId}`);
+        });
+
+        connection.start().catch(err => console.error(err.toString()));
+
+        document.getElementById("sendButton").addEventListener("click", () => {
+            const message = document.getElementById("messageInput").value;
+            connection.invoke("SendMessage", "User", message).catch(err => console.error(err.toString()));
+            document.getElementById("messageInput").value = '';
+        });
+    </script>
+}

@@ -32,6 +32,13 @@ else
                     <td>@appointment.TenDichVu</td>
                     <td>@appointment.TrangThai</td>
                     <td>@appointment.GioHen.ToString(@"hh\:mm")</td>
+                    <td>
+                        @if (appointment.TrangThai == "Đang chờ duyệt")
+                        {
+                            <a asp-action="EditAppointment" asp-route-id="@appointment.MaLichHen" class="btn btn-primary">Sửa</a>
+                            <a asp-action="DeleteAppointment" asp-route-id="@appointment.MaLichHen" class="btn btn-danger">Hủy</a>
+                        }
+                    </td>
                 </tr>
             }
         </tbody>
