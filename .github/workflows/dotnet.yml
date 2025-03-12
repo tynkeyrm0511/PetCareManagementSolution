@@ -19,19 +19,19 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies for ASP.NET Web
-      run: dotnet restore ./Path/To/Your/AspNetWebProject.csproj
+      run: dotnet restore ./PetCareWeb/PetCareWeb.csproj
 
     - name: Restore dependencies for WinForms App
-      run: dotnet restore ./Path/To/Your/WinFormsAppProject.csproj
+      run: dotnet restore ./PetCareAdminApp/PetCareAdminApp.csproj
 
     - name: Build ASP.NET Web
-      run: dotnet build ./Path/To/Your/AspNetWebProject.csproj --no-restore
+      run: dotnet build ./PetCareWeb/PetCareWeb.csproj --no-restore
 
     - name: Build WinForms App
-      run: dotnet build ./Path/To/Your/WinFormsAppProject.csproj --no-restore
+      run: dotnet build ./PetCareAdminApp/PetCareAdminApp.csproj --no-restore
 
     - name: Test ASP.NET Web
-      run: dotnet test ./Path/To/Your/AspNetWebProject.csproj --no-build --verbosity normal
+      run: dotnet test ./PetCareWeb/PetCareWeb.csproj --no-build --verbosity normal
 
     - name: Test WinForms App
-      run: dotnet test ./Path/To/Your/WinFormsAppProject.csproj --no-build --verbosity normal
+      run: dotnet test ./PetCareAdminApp/PetCareAdminApp.csproj --no-build --verbosity normal
