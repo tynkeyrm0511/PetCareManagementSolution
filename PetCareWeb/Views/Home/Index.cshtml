@@ -32,7 +32,7 @@
             <p>@dichVu.MoTa</p>
             <p><strong>Giá:</strong> @dichVu.Gia VND</p>
             <div class="service-footer">
-                <form asp-controller="Appointment" asp-action="Book" method="post">
+                <form asp-controller="Account" asp-action="CreateAppointment" method="get">
                     <input type="hidden" name="dichVuId" value="@dichVu.MaDichVu" />
                     <button type="submit" class="btn btn-primary">ĐẶT LỊCH HẸN</button>
                 </form>

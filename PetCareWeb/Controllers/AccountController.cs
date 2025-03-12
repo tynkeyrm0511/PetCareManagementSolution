@@ -5,21 +5,8 @@ using PetCareWeb.Data;
 using PetCareWeb.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using PetCareWeb.Data;
-using PetCareWeb.Models;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 namespace PetCareWeb.Controllers
 {
@@ -354,19 +341,23 @@ namespace PetCareWeb.Controllers
 
             return View(appointments);
         }
+        
         // GET: Account/CreateAppointment
-        public IActionResult CreateAppointment()
+        [Authorize]
+        public IActionResult CreateAppointment(int dichVuId)
         {
             var maKhachHang = User.FindFirstValue("MaKhachHang");
             if (maKhachHang == null)
             {
-                return Challenge();
+                TempData["Message"] = "Bạn cần phải đăng nhập để có thể đặt lịch hẹn.";
+                return RedirectToAction("Login", new { returnUrl = Url.Action("CreateAppointment", new { dichVuId }) });
             }
 
             var viewModel = new CreateAppointmentViewModel
             {
                 ThuCungs = _context.ThuCung.Where(tc => tc.MaKhachHang.ToString() == maKhachHang).ToList(),
-                DichVus = _context.DichVus.ToList()
+                DichVus = _context.DichVus.ToList(),
+                MaDichVu = dichVuId
             };
 
             return View(viewModel);
