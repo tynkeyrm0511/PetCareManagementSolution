@@ -44,6 +44,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmChat";
             this.Text = "Chat";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmChat_FormClosing);
             this.Load += new System.EventHandler(this.frmChat_Load);
             this.ResumeLayout(false);
 
