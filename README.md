@@ -28,7 +28,7 @@ Additionally, customers can manage their personal and pet profiles.
 - Built the user interface
 - Performed software testing
 # Technologies Used
-- Frontend: HTML, CSS, JavaScript 
+- Frontend: HTML, CSS, JavaScript, Guna UI Framework
 - Backend: ASP.NET Core, ADO.NET, C#
 - Database: SQL Server
 - Authentication và Authorization: ASP.NET Core Identity
