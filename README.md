@@ -40,6 +40,18 @@ Additionally, customers can manage their personal and pet profiles.
 - Customer Portal: Register and log in; Update personal and pet information; Book and manage appointments; Chat with admin
 
 # Mô tả giao diện / UI Preview
-# Winform App Admin
-Login
-![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/Admin_Login.png)
+## Winform App Admin
+- Login Form
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/Admin_Login.png)
+- Main Form
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/Supports.png)
+- Customers CRUD Form
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/Admin_CRUD_Cusomters.png)
+- Pets CRUD Form
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/CRUD_Pets.png)
+- Services CRUD Form
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/CRUD_Services.png)
+- Appointment CRUD Form
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/CRUD_Appointments.png)
+- Chat Form
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/Supports.png)
