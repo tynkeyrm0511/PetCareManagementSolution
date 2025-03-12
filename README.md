@@ -55,3 +55,22 @@ Additionally, customers can manage their personal and pet profiles.
 ## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/CRUD_Appointments.png)
 - Chat Form
 ## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/App/Supports.png)
+## Website for Customers
+- Home Page
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/HomePages.png)
+- Login
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Login.png)
+- Register
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Register.png)
+- Profile
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Profile.png)
+- Pets
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Pets.png)
+- CRUD Pets
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Pets-Edit.png)
+- Appointments
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Appointment.png)
+- CRUD Appointments
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Appointment-Create.png)
+- Chat
+## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Supports.png)
