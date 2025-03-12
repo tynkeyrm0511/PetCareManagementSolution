@@ -35,7 +35,6 @@ else
                     <td>
                         @if (appointment.TrangThai == "Đang chờ duyệt")
                         {
-                            <a asp-action="EditAppointment" asp-route-id="@appointment.MaLichHen" class="btn btn-primary">Sửa</a>
                             <a asp-action="DeleteAppointment" asp-route-id="@appointment.MaLichHen" class="btn btn-danger">Hủy</a>
                         }
                     </td>

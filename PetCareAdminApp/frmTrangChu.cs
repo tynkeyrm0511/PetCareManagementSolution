@@ -8,13 +8,11 @@ namespace PetCareAdminApp
     public partial class frmTrangChu : Form
     {
         private ChromiumWebBrowser browser;
-        private frmChat chatForm;
         private bool isClosing = false;
 
         public frmTrangChu()
         {
             InitializeComponent();
-            timerThoiGian.Start();
         }
 
         private void InitializeChromium()
