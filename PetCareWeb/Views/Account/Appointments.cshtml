@@ -4,43 +4,63 @@
     ViewData["Title"] = "Quản Lý Lịch Hẹn";
 }
 
-<h2>Quản Lý Lịch Hẹn</h2>
-
-@if (!Model.Any())
-{
-    <p>Chưa có lịch hẹn nào.</p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Ngày Hẹn</th>
-                <th>Thú Cưng</th>
-                <th>Dịch Vụ</th>
-                <th>Trạng Thái</th>
-                <th>Giờ Hẹn</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var appointment in Model)
-            {
+<div class="form-container">
+    <h2>Quản Lý Lịch Hẹn</h2>
+    <div class="btn-container">
+        <a href="@Url.Action("CreateAppointment", "Account")" class="btn btn-success btn-container">Tạo Lịch Hẹn Mới</a>
+    </div>
+    @if (!Model.Any())
+    {
+        <p>Chưa có lịch hẹn nào.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@appointment.NgayHen.ToString("dd/MM/yyyy")</td>
-                    <td>@appointment.TenThuCung</td>
-                    <td>@appointment.TenDichVu</td>
-                    <td>@appointment.TrangThai</td>
-                    <td>@appointment.GioHen.ToString(@"hh\:mm")</td>
-                    <td>
-                        @if (appointment.TrangThai == "Đang chờ duyệt")
-                        {
-                            <a asp-action="DeleteAppointment" asp-route-id="@appointment.MaLichHen" class="btn btn-danger">Hủy</a>
-                        }
-                    </td>
+                    <th>Ngày Hẹn</th>
+                    <th>Thú Cưng</th>
+                    <th>Dịch Vụ</th>
+                    <th>Trạng Thái</th>
+                    <th>Giờ Hẹn</th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-}
-<a href="@Url.Action("CreateAppointment", "Account")" class="btn btn-success">Tạo Lịch Hẹn Mới</a>
+            </thead>
+            <tbody>
+                @foreach (var appointment in Model)
+                {
+                    <tr>
+                        <td>@appointment.NgayHen.ToString("dd/MM/yyyy")</td>
+                        <td>@appointment.TenThuCung</td>
+                        <td>@appointment.TenDichVu</td>
+                        <td>
+                            @if (appointment.TrangThai == "Đang chờ duyệt")
+                            {
+                                <span><i class="fas fa-hourglass-half"></i> Đang chờ duyệt</span>
+                            }
+                            else if (appointment.TrangThai == "Đã duyệt")
+                            {
+                                <span><i class="fas fa-check-circle"></i> Đã duyệt</span>
+                            }
+                            else if (appointment.TrangThai == "Đã từ chối")
+                            {
+                                <span><i class="fas fa-times-circle"></i> Đã từ chối</span>
+                            }
+                            else
+                            {
+                                <span>@appointment.TrangThai</span>
+                            }
+                        </td>
+                        <td>@appointment.GioHen.ToString(@"hh\:mm")</td>
+                        <td>
+                            @if (appointment.TrangThai == "Đang chờ duyệt")
+                            {
+                                <a asp-action="DeleteAppointment" asp-route-id="@appointment.MaLichHen" class="btn btn-danger">Hủy</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

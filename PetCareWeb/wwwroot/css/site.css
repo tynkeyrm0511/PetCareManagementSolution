@@ -115,6 +115,10 @@ body {
 
 .btn-container {
     text-align: center; /* Căn giữa nút */
+
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .btn-primary {
@@ -227,3 +231,118 @@ body {
         background-color: #ff0000;
         box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
     }
+
+/* CSS cho bảng quản lý lịch hẹn */
+.form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #00DCA9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #00DCA9;
+        font-weight: bold;
+    }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+}
+
+    .table thead {
+        background: #00DCA9;
+        color: #fff;
+    }
+
+        .table thead th {
+            padding: 10px;
+            text-align: left;
+        }
+
+    .table tbody tr {
+        border-bottom: 1px solid #e9ecef;
+    }
+
+        .table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+    .table tbody td {
+        padding: 10px;
+    }
+
+.alert {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.btn {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #00DCA9;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-success {
+    background-color: #00DCA9;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    background-color: #499789;
+    transform: scale(1.05);
+}
+
+.btn:focus {
+    background-color: #499789;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+h2 {
+    color: #00DCA9;
+    text-align: center;
+    margin-top: 40px;
+}
+
+p {
+    text-align: center;
+    color: #6c757d;
+}
+
+
+
+
+
