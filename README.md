@@ -3,7 +3,7 @@
  và quản lý các lịch hẹn cho thú cưng của họ với các dịch vụ khác nhau tại trung tâm chăm sóc thú cưng. Ngoài ra, khách hàng
  có thể quản lý thông tin hồ sơ cá nhân và thú cưng của mình.
 #  Công nghệ sử dụng:
-- Frontend: HTML, CSS, JavaScript
+- Frontend: HTML, CSS, JavaScript, Guna UI Framework
 - Backend: ASP.NET Core, ADO.NET, C#
 - Cơ sở dữ liệu: SQL Server
 - Authentication và Authorization: ASP.NET Core Identity
