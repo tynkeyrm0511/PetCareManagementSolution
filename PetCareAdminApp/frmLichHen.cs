@@ -27,6 +27,77 @@ namespace PetCareAdminApp
             loadDichVu();
             loadTrangThai();
             loadGioHen();
+            InitializeDataGridView();
+        }
+        private void InitializeDataGridView()
+        {
+            dgvLichHen.AutoGenerateColumns = false;
+
+            // Xóa tất cả các cột hiện có trong DataGridView
+            dgvLichHen.Columns.Clear();
+
+            // Thêm cột MaLichHen
+            DataGridViewTextBoxColumn maLichHenColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mã Lịch Hẹn",
+                DataPropertyName = "MaLichHen",
+                Name = "MaLichHen"
+            };
+            dgvLichHen.Columns.Add(maLichHenColumn);
+
+            // Thêm cột NgayHen
+            DataGridViewTextBoxColumn ngayHenColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Ngày Hẹn",
+                DataPropertyName = "NgayHen",
+                Name = "NgayHen"
+            };
+            dgvLichHen.Columns.Add(ngayHenColumn);
+
+            // Thêm cột GioHen
+            DataGridViewTextBoxColumn gioHenColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Giờ Hẹn",
+                DataPropertyName = "GioHen",
+                Name = "GioHen"
+            };
+            dgvLichHen.Columns.Add(gioHenColumn);
+
+            // Thêm cột TrangThai
+            DataGridViewTextBoxColumn trangThaiColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Trạng Thái",
+                DataPropertyName = "TrangThai",
+                Name = "TrangThai"
+            };
+            dgvLichHen.Columns.Add(trangThaiColumn);
+
+            // Thêm cột MaKhachHang
+            DataGridViewTextBoxColumn maKhachHangColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mã Khách Hàng",
+                DataPropertyName = "MaKhachHang",
+                Name = "MaKhachHang"
+            };
+            dgvLichHen.Columns.Add(maKhachHangColumn);
+
+            // Thêm cột MaThuCung
+            DataGridViewTextBoxColumn maThuCungColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mã Thú Cưng",
+                DataPropertyName = "MaThuCung",
+                Name = "MaThuCung"
+            };
+            dgvLichHen.Columns.Add(maThuCungColumn);
+
+            // Thêm cột MaDichVu
+            DataGridViewTextBoxColumn maDichVuColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mã Dịch Vụ",
+                DataPropertyName = "MaDichVu",
+                Name = "MaDichVu"
+            };
+            dgvLichHen.Columns.Add(maDichVuColumn);
         }
         private void loadLichHen()
         {

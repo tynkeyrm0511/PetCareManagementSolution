@@ -23,6 +23,7 @@ namespace PetCareAdminApp
         private void frmDichVu_Load(object sender, EventArgs e)
         {
             loadDichVu();
+            InitializeDataGridView();
         }
         private void loadDichVu()
         {
@@ -224,6 +225,59 @@ namespace PetCareAdminApp
                     picDichVu.Image = null;
                 }
             }
+        }
+
+        private void InitializeDataGridView()
+        {
+            dgvDichVu.AutoGenerateColumns = false;
+
+            // Xóa tất cả các cột hiện có trong DataGridView
+            dgvDichVu.Columns.Clear();
+
+            // Thêm cột MaDichVu
+            DataGridViewTextBoxColumn maDichVuColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mã Dịch Vụ",
+                DataPropertyName = "MaDichVu",
+                Name = "MaDichVu"
+            };
+            dgvDichVu.Columns.Add(maDichVuColumn);
+
+            // Thêm cột TenDichVu
+            DataGridViewTextBoxColumn tenDichVuColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Tên Dịch Vụ",
+                DataPropertyName = "TenDichVu",
+                Name = "TenDichVu"
+            };
+            dgvDichVu.Columns.Add(tenDichVuColumn);
+
+            // Thêm cột MoTa
+            DataGridViewTextBoxColumn moTaColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mô Tả",
+                DataPropertyName = "MoTa",
+                Name = "MoTa"
+            };
+            dgvDichVu.Columns.Add(moTaColumn);
+
+            // Thêm cột Gia
+            DataGridViewTextBoxColumn giaColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Giá",
+                DataPropertyName = "Gia",
+                Name = "Gia"
+            };
+            dgvDichVu.Columns.Add(giaColumn);
+
+            // Thêm cột HinhAnhBase64
+            DataGridViewTextBoxColumn hinhAnhBase64Column = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Hình Ảnh Base64",
+                DataPropertyName = "HinhAnhBase64",
+                Name = "HinhAnhBase64"
+            };
+            dgvDichVu.Columns.Add(hinhAnhBase64Column);
         }
     }
 }

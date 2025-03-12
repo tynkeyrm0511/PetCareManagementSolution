@@ -26,6 +26,59 @@ namespace PetCareAdminApp
             loadChu();
             loadThuCung();
             LoadLoaiThuCung();
+            InitializeDataGridView();
+        }
+        private void InitializeDataGridView()
+        {
+            dgvThuCung.AutoGenerateColumns = false;
+
+            // Xóa tất cả các cột hiện có trong DataGridView
+            dgvThuCung.Columns.Clear();
+
+            // Thêm cột MaThuCung
+            DataGridViewTextBoxColumn maThuCungColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mã Thú Cưng",
+                DataPropertyName = "MaThuCung",
+                Name = "MaThuCung"
+            };
+            dgvThuCung.Columns.Add(maThuCungColumn);
+
+            // Thêm cột TenThuCung
+            DataGridViewTextBoxColumn tenThuCungColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Tên Thú Cưng",
+                DataPropertyName = "TenThuCung",
+                Name = "TenThuCung"
+            };
+            dgvThuCung.Columns.Add(tenThuCungColumn);
+
+            // Thêm cột Loai
+            DataGridViewTextBoxColumn loaiColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Loại",
+                DataPropertyName = "Loai",
+                Name = "Loai"
+            };
+            dgvThuCung.Columns.Add(loaiColumn);
+
+            // Thêm cột MaKhachHang
+            DataGridViewTextBoxColumn maKhachHangColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mã Khách Hàng",
+                DataPropertyName = "MaKhachHang",
+                Name = "MaKhachHang"
+            };
+            dgvThuCung.Columns.Add(maKhachHangColumn);
+
+            // Thêm cột HinhAnhBase64
+            DataGridViewTextBoxColumn hinhAnhBase64Column = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Hình Ảnh Base64",
+                DataPropertyName = "HinhAnhBase64",
+                Name = "HinhAnhBase64"
+            };
+            dgvThuCung.Columns.Add(hinhAnhBase64Column);
         }
         private void xoaCacTruongThongTin()
         {

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
             this.panelMain = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnMoFormChat = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnMoFormLichHen = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -62,7 +63,8 @@
             this.btnMoFormChat.BorderThickness = 4;
             this.btnMoFormChat.CheckedState.Parent = this.btnMoFormChat;
             this.btnMoFormChat.CustomImages.Parent = this.btnMoFormChat;
-            this.btnMoFormChat.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnMoFormChat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnMoFormChat.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(197)))), ((int)(((byte)(231)))));
             this.btnMoFormChat.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormChat.ForeColor = System.Drawing.Color.White;
             this.btnMoFormChat.HoverState.Parent = this.btnMoFormChat;
@@ -84,7 +86,8 @@
             this.btnMoFormLichHen.BorderThickness = 4;
             this.btnMoFormLichHen.CheckedState.Parent = this.btnMoFormLichHen;
             this.btnMoFormLichHen.CustomImages.Parent = this.btnMoFormLichHen;
-            this.btnMoFormLichHen.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnMoFormLichHen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnMoFormLichHen.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(197)))), ((int)(((byte)(231)))));
             this.btnMoFormLichHen.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormLichHen.ForeColor = System.Drawing.Color.White;
             this.btnMoFormLichHen.HoverState.Parent = this.btnMoFormLichHen;
@@ -106,7 +109,8 @@
             this.btnMoFormDichVu.BorderThickness = 4;
             this.btnMoFormDichVu.CheckedState.Parent = this.btnMoFormDichVu;
             this.btnMoFormDichVu.CustomImages.Parent = this.btnMoFormDichVu;
-            this.btnMoFormDichVu.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnMoFormDichVu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnMoFormDichVu.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(197)))), ((int)(((byte)(231)))));
             this.btnMoFormDichVu.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormDichVu.ForeColor = System.Drawing.Color.White;
             this.btnMoFormDichVu.HoverState.Parent = this.btnMoFormDichVu;
@@ -128,8 +132,8 @@
             this.btnMoFormThuCung.BorderThickness = 4;
             this.btnMoFormThuCung.CheckedState.Parent = this.btnMoFormThuCung;
             this.btnMoFormThuCung.CustomImages.Parent = this.btnMoFormThuCung;
-            this.btnMoFormThuCung.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnMoFormThuCung.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnMoFormThuCung.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnMoFormThuCung.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(197)))), ((int)(((byte)(231)))));
             this.btnMoFormThuCung.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormThuCung.ForeColor = System.Drawing.Color.White;
             this.btnMoFormThuCung.HoverState.Parent = this.btnMoFormThuCung;
@@ -151,8 +155,8 @@
             this.btnMoFormKhachHang.BorderThickness = 4;
             this.btnMoFormKhachHang.CheckedState.Parent = this.btnMoFormKhachHang;
             this.btnMoFormKhachHang.CustomImages.Parent = this.btnMoFormKhachHang;
-            this.btnMoFormKhachHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.btnMoFormKhachHang.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.btnMoFormKhachHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnMoFormKhachHang.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(197)))), ((int)(((byte)(231)))));
             this.btnMoFormKhachHang.Font = new System.Drawing.Font("Playpen Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoFormKhachHang.ForeColor = System.Drawing.Color.White;
             this.btnMoFormKhachHang.HoverState.Parent = this.btnMoFormKhachHang;
@@ -169,7 +173,7 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Image = global::PetCareAdminApp.Properties.Resources.cat;
+            this.guna2PictureBox1.Image = global::PetCareAdminApp.Properties.Resources.sales;
             this.guna2PictureBox1.Location = new System.Drawing.Point(13, 13);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
@@ -179,14 +183,11 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
-            // timerThoiGian
-            // 
-            // 
             // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
             this.ClientSize = new System.Drawing.Size(1436, 727);
             this.Controls.Add(this.btnMoFormChat);
             this.Controls.Add(this.btnMoFormLichHen);
@@ -196,10 +197,11 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTrangChu";
+            this.Text = "HOME";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTrangChu_FormClosing);
             this.Load += new System.EventHandler(this.frmTrangChu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

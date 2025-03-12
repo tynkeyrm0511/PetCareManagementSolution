@@ -23,6 +23,59 @@ namespace PetCareAdminApp
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             loadKhachHang();
+            InitializeDataGridView();
+        }
+        private void InitializeDataGridView()
+        {
+            dgvKhachHang.AutoGenerateColumns = false;
+
+            // Xóa tất cả các cột hiện có trong DataGridView
+            dgvKhachHang.Columns.Clear();
+
+            // Thêm cột MaKhachHang
+            DataGridViewTextBoxColumn maKhachHangColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mã Khách Hàng",
+                DataPropertyName = "MaKhachHang",
+                Name = "MaKhachHang"
+            };
+            dgvKhachHang.Columns.Add(maKhachHangColumn);
+
+            // Thêm cột TenKhachHang
+            DataGridViewTextBoxColumn tenKhachHangColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Tên Khách Hàng",
+                DataPropertyName = "TenKhachHang",
+                Name = "TenKhachHang"
+            };
+            dgvKhachHang.Columns.Add(tenKhachHangColumn);
+
+            // Thêm cột SoDienThoai
+            DataGridViewTextBoxColumn soDienThoaiColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Số Điện Thoại",
+                DataPropertyName = "SoDienThoai",
+                Name = "SoDienThoai"
+            };
+            dgvKhachHang.Columns.Add(soDienThoaiColumn);
+
+            // Thêm cột Email
+            DataGridViewTextBoxColumn emailColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Email",
+                DataPropertyName = "Email",
+                Name = "Email"
+            };
+            dgvKhachHang.Columns.Add(emailColumn);
+
+            // Thêm cột MatKhau
+            DataGridViewTextBoxColumn matKhauColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Mật Khẩu",
+                DataPropertyName = "MatKhau",
+                Name = "MatKhau"
+            };
+            dgvKhachHang.Columns.Add(matKhauColumn);
         }
         private void loadKhachHang()
         {
