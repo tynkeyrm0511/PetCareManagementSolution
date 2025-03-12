@@ -66,11 +66,11 @@ Additionally, customers can manage their personal and pet profiles.
 ## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Profile.png)
 - Pets
 ## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Pets.png)
-- CRUD Pets
+- Update Pet
 ## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Pets-Edit.png)
 - Appointments
 ## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Appointment.png)
-- CRUD Appointments
+- Create Appointments
 ## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Appointment-Create.png)
 - Chat
 ## ![Mô tả ảnh](https://github.com/tynkeyrm0511/PetCareManagementSolution/blob/master/Images_PetCare/Web/Supports.png)
