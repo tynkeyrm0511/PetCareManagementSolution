@@ -1,23 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CefSharp;
+using CefSharp.WinForms;
 
 namespace PetCareAdminApp
 {
-    public partial class frmTrangChu: Form
+    public partial class frmTrangChu : Form
     {
+        private ChromiumWebBrowser browser;
+        private frmChat chatForm;
         private bool isClosing = false;
 
         public frmTrangChu()
         {
             InitializeComponent();
             timerThoiGian.Start();
+        }
+
+        private void InitializeChromium()
+        {
+            if (!Cef.IsInitialized.HasValue || !Cef.IsInitialized.Value)
+            {
+                Cef.Initialize(new CefSettings());
+            }
+            browser = new ChromiumWebBrowser("https://dashboard.tawk.to/")
+            {
+                Dock = DockStyle.Fill
+            };
+            panelMain.Controls.Add(browser);
         }
 
         private void OpenChildForm(Form childForm)
@@ -36,10 +46,9 @@ namespace PetCareAdminApp
             childForm.Show();
         }
 
-
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
-
+            InitializeChromium();
         }
 
         private void frmTrangChu_FormClosing(object sender, FormClosingEventArgs e)
@@ -63,6 +72,7 @@ namespace PetCareAdminApp
                 }
             }
         }
+
         private void btnMoFormKhachHang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmKhachHang());
@@ -86,11 +96,6 @@ namespace PetCareAdminApp
         private void btnMoFormChat_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmChat());
-        }
-
-        private void timerThoiGian_Tick(object sender, EventArgs e)
-        {
-            lblThoiGian.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
